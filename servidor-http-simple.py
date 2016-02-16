@@ -18,8 +18,8 @@ mySocket.bind(('localhost', 32122))
 
 mySocket.listen(5)
 
-# La IP esta alojada en la posicion 1 de address
-# El Puerto esta alojado en la possicion 2 de address
+# La IP esta alojada en la posicion 1 de address.
+# El Puerto esta alojado en la possicion 2 de address.
 
 while True:
 	print 'Waiting for connections'
