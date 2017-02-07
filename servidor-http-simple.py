@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # Borja Egea Madrid
 
@@ -22,7 +22,7 @@ mySocket.listen(5)
 # El Puerto esta alojado en la possicion 2 de address.
 
 while True:
-	print 'Waiting for connections'
+	print ('Waiting for connections')
 	(recvSocket, address) = mySocket.accept()
 	print 'HTTP request received:'
 	print recvSocket.recv(1024)
@@ -30,5 +30,5 @@ while True:
 			"<html><body><h1>Hola! Eres de esta IP: " + address[0] +
 			" y de este Puerto: " + str(address[1]) + 
 			"</h1></body></html>" +
-			"\r\n")
+			"\r\n", "utf-8")
 	recvSocket.close()
