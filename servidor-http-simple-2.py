@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 """
 Simple HTTP Server version 2: reuses the port, so it can be
@@ -42,7 +42,7 @@ try:
                         str(address[0]) +
                         "</p>" +
                         "</body></html>" +
-                        "\r\n")
+                        "\r\n", "utf-8")
         recvSocket.close()
 except KeyboardInterrupt:
     print "Closing binded socket"
