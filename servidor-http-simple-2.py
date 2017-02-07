@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 """
 Simple HTTP Server version 2: reuses the port, so it can be
