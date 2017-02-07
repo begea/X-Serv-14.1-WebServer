@@ -22,7 +22,7 @@ mySocket.listen(5)
 # El Puerto esta alojado en la possicion 2 de address.
 
 while True:
-	print ('Waiting for connections')
+	print 'Waiting for connections'
 	(recvSocket, address) = mySocket.accept()
 	print 'HTTP request received:'
 	print recvSocket.recv(1024)
