@@ -24,9 +24,9 @@ while True:
 	(recvSocket, address) = mySocket.accept()
 	print ('HTTP request received:')
 	print (recvSocket.recv(1024))
-	recvSocket.send("HTTP/1.1 200 OK\r\n\r\n" +
+	recvSocket.send(bytes("HTTP/1.1 200 OK\r\n\r\n" +
 			"<html><body><h1>Hola! Eres de esta IP: " + address[0] +
 			" y de este Puerto: " + str(address[1]) +
 			"</h1></body></html>" +
-			"\r\n")
+			"\r\n", "utf-8"))
 	recvSocket.close()
