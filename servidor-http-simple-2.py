@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 """
 Simple HTTP Server version 2: reuses the port, so it can be
@@ -20,7 +20,7 @@ mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Let the port be reused if no process is actually using it
 mySocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 # Bind to the address corresponding to the main name of the host
-mySocket.bind((socket.gethostname(), 1235))
+mySocket.bind(('localhost', 1235))
 
 # Queue a maximum of 5 TCP connection requests
 
@@ -31,19 +31,19 @@ mySocket.listen(5)
 
 try:
     while True:
-        print 'Waiting for connections'
+        print ('Waiting for connections')
         (recvSocket, address) = mySocket.accept()
-        print 'Request received:'
-        print recvSocket.recv(2048)
-        print 'Answering back...'
+        print ('Request received:')
+        print (recvSocket.recv(2048))
+        print ('Answering back...')
         recvSocket.send("HTTP/1.1 200 OK\r\n\r\n" +
                         "<html><body><h1>Hello World!</h1>" +
                         "<p>And in particular hello to you, " +
                         str(address[0]) +
                         "</p>" +
                         "</body></html>" +
-                        "\r\n", "utf-8")
+                        "\r\n")
         recvSocket.close()
 except KeyboardInterrupt:
-    print "Closing binded socket"
+    print ("Closing binded socket")
     mySocket.close()
