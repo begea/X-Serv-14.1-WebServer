@@ -36,13 +36,13 @@ try:
         print ('Request received:')
         print (recvSocket.recv(2048))
         print ('Answering back...')
-        recvSocket.send("HTTP/1.1 200 OK\r\n\r\n" +
+        recvSocket.send(bytes("HTTP/1.1 200 OK\r\n\r\n" +
                         "<html><body><h1>Hello World!</h1>" +
                         "<p>And in particular hello to you, " +
                         str(address[0]) +
                         "</p>" +
                         "</body></html>" +
-                        "\r\n")
+                        "\r\n", "utf-8"))
         recvSocket.close()
 except KeyboardInterrupt:
     print ("Closing binded socket")
